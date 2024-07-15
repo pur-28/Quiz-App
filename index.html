@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equive="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Quiz App</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="startbtn">Start Quiz</div>
+
+        <!-- info box -->
+         <div class="infobox">
+            <div class="infotitle"><span>Rules For The Quiz</span></div>
+            <div class="infolist">
+                <div class="info"> 1. You have <span>15 seconds</span> to each questions.</div>
+                <div class="info"> 2.Once you select your answer, it can't be change.</div>
+                <div class="info"> 3.You can't select any option once time goes off.</div>
+                <div class="info"> 4. You can't exit from the middle of the Quiz.</div>
+                <div class="info">5. You get points on the base of your performance.</div>
+            </div>
+            <div class="buttons">
+                <button class="quit">Exit Quiz</button>
+                <button class="restart">Continue</button>
+            </div>
+         </div>
+        <!-- end of info box -->
+
+        <!--quiz box-->
+         <div class="quizbox">
+
+            <header>
+                <div class="title">Quiz Application</div>
+                <div class="timer">
+                    <div class="timelefttxt">Time Left</div>
+                    <div class="timersec">15</div>
+                </div>
+                <div class="timeline"></div>
+            </header>
+
+            <section>
+                <div class="quetxt"></div>
+                <div class="optionlist"></div>
+            </section>
+
+            <footer>
+                <div class="totalque"></div>
+                <div class="nextbtn">Next Question</div>
+            </footer>
+
+         </div>
+        <!--quiz box-->
+
+        <!--result box-->
+        <div class="resultbox">
+            <div class="completetext">You have completed the Quiz</div>
+            <div class="scoretext">
+
+            </div>
+            <div class="buttons">
+                <button class="restart">Replay Quiz</button>
+                <button class="quit">Quit Quize</button>
+            </div>
+        </div>
+         <!--result box-->
+
+    </div>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>

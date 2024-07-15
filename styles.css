@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@0,200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url(bg.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+
+:root {
+    --box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2), -3px -3px 3px rgba(0, 0, 0, 0.19);
+    --background: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 255, 255, 0.1);
+    --box-shadow2: 0 25px 45px rgba(0, 0, 0, 0.1);
+}
+
+::selection {
+    color: #fff;
+    background-color: #007bff;
+}
+
+.startbtn,
+.infobox,
+.quizbox,
+.resultbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: var(--box-shadow);
+}
+
+.infobox.activeInfo,
+.quizbox.activeQuiz,
+.resultbox.activeResult {
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+button {
+    color: #fff;
+    background-color: var(--background);
+    border: 2px solid var(--border);
+    box-shadow: var(--box-shadow2);
+    backdrop-filter: blur(20px);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.startbtn {
+    padding: 20px 120px; /* Adjust padding as needed */
+    font-size: 24px; /* Adjust font size as needed */
+    background-color: ivory;
+    border: 2px solid var(--border);
+    box-shadow: var(--box-shadow2);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.startbtn:hover {
+    background-color: transparent;
+    color: rgb(48, 42, 75);
+}
+
+
+.infobox {
+    width: 800px;
+    color: #fff;
+    line-height: 2;
+    background-color: var(--background);
+    border: 2px solid var(--border);
+    box-shadow: var(--box-shadow2);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--box-shadow2);
+    border-radius: 5px;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+    padding: 2rem 0;
+}
+
+.infobox .infotitle {
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    border-radius: 5px 5px 0 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.infobox .infolist {
+    padding: 15px 30px;
+}
+
+.infobox .infolist .info {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.infobox .infolist .info span{
+    font-weight: 600;
+    color: #555;
+}
+
+.infobox .buttons button{
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.infobox .quit,
+.infobox .restart {
+    background-color: transparent;
+    border: 1px solid #fff;
+    
+}
+
+.quizbox {
+    width: 800px;
+    background-color: var(--background);
+    border: 2px solid var(--border);
+    box-shadow: var(--box-shadow2);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--box-shadow2);
+    border-radius: 5px;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+.quizbox header{
+    position: relative;
+    z-index: 2;
+    height: 70px;
+    padding: 0 30px;
+    background-color: var(--background);
+    border: 2px solid var(--border);
+    box-shadow: var(--box-shadow2);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--box-shadow2);
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.quizbox header .title{
+    font-size: 25px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.quizbox header .timer{
+    color: #fff;
+    background-color: var(--background);
+    border: 2px solid var(--border);
+    box-shadow: var(--box-shadow2);
+    backdrop-filter: blur(20px);
+    height: 45px;
+    padding: 0 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 145px;
+}
+
+.quizbox header .timer .timelefttxt{
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
+}
+
+.quizbox header .timer .timersec{
+    color: #fff;
+    background-color: var(--background);
+    border: 2px solid var(--border);
+    box-shadow: var(--box-shadow2);
+    backdrop-filter: blur(20px);
+    font-size: 18px;
+    font-weight: 500;
+    height: 30px;
+    width: 45px;
+    border-radius: 5px;
+    text-align: center;
+    user-select: none;
+}
+
+.quizbox header .timeline{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: rgb(35, 21, 53);
+}
+
+section{
+    background-color: var(--background);
+    border: 2px solid var(--border);
+    box-shadow: var(--box-shadow2);
+    backdrop-filter: blur(20px);
+}
+
+section .quetxt{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+section .optionlist{
+    padding: 20px 0;
+    display: block;
+}
+
+section .optionlist .option{
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #84c5fe;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 17px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all .3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section .optionlist .option:last-child{
+    margin-bottom: 0;
+}
+
+section .optionlist .option:hover{
+    color: #004085;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
+}
+
+section .optionlist .option.correct{
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+section .optionlist .option.incorrect{
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+section .optionlist .option.disabled {
+    pointer-events: none;
+}
+
+section .optionlist .option .icon {
+    font-size: 30px;
+}
+
+section .optionlist .option .icon.tick{
+    color: #23903c;
+    border-color: #23903c;
+    background: #d4edda;
+}
+
+section .optionlist .option .icon.cross{
+    color: #a42834;
+    background: #f8d7da;
+    border-color: #a42834;
+}
+
+footer {
+    height: 60px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid lightgray;
+    color: #fff;
+}
+
+footer .totalque span{
+    display: flex;
+    user-select: none;
+}
+
+footer .totalque span p{
+    font-weight: 500;
+    padding: 0 5px;
+}
+
+footer .totalque span p:first-child{
+    padding-left: 0;
+}
+
+
+footer button{
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    background-color: var(--background);
+    border: 2px solid var(--border);
+    box-shadow: var(--box-shadow2);
+    backdrop-filter: blur(20px);
+    line-height: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+footer button:hover{
+    background-color: #cce5ff;
+    color: crimson;
+}
+
+footer button.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+footer .nextbtn:hover {
+    background-color: transparent;
+    color: rgb(52, 21, 61);
+    transform: scale(1.1);
+}
+
+
+.resultbox {
+    background-color: var(--background);
+    border: 2px solid var(--border);
+    box-shadow: var(--box-shadow2);
+    backdrop-filter: blur(20px);
+    border-radius: 5px;
+    width: 800px;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s ease;
+}
+
+.resultbox .completetext{
+    font-size: 20px;
+    font-weight: 500;
+    color: #555;
+}
+
+.resultbox .scoretext span {
+    display: flex;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.resultbox .scoretext span p{
+    padding: 0 4px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.resultbox .buttons{
+    display: flex;
+    margin: 20px 0;
+}
+
+.resultbox .buttons button{
+    max-width: 0 10px;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 18px;
+    transition: all .3s ease;
+}
+
+.buttons button.restart{
+    color: #fff;
+}
+
+.buttons button.quit{
+    color: #fff;
+}
+
+.buttons button.quit:hover,
+.buttons button.restart:hover {
+    color: rgb(35, 21, 53);
+    background: transparent;
+}
